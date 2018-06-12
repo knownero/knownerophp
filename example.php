@@ -8,10 +8,10 @@ error_reporting(E_ALL);
 require_once('src/jsonRPCClient.php');
 require_once('src/daemonRPC.php');
 
-$daemonRPC = new daemonRPC('127.0.0.1', 28081); // Change to match your daemon (monerod) IP address and port; 18081 is the default port for mainnet, 28081 for testnet, 38081 for stagenet
-// $daemonRPC = new daemonRPC(['host' => '127.0.0.1', 'port' => 28081]) // Passing parameters in as array; parameters can be in any order and all are optional.
+$daemonRPC = new daemonRPC('127.0.0.1', 4368); // Change to match your daemon (monerod) IP address and port; 4368 is the default port for mainnet, 28081 for testnet, 38081 for stagenet
+// $daemonRPC = new daemonRPC(['host' => '127.0.0.1', 'port' => 4368]) // Passing parameters in as array; parameters can be in any order and all are optional.
 $getblockcount = $daemonRPC->getblockcount();
-$on_getblockhash = $daemonRPC->on_getblockhash(42069);
+$on_getblockhash = $daemonRPC->on_getblockhash(10000);
 // $getblocktemplate = $daemonRPC->getblocktemplate('9sZABNdyWspcpsCPma1eUD5yM3efTHfsiCx3qB8RDYH9UFST4aj34s5Ygz69zxh8vEBCCqgxEZxBAEC4pyGkN4JEPmUWrxn', 60);
 // $submitblock = $daemonRPC->submitblock($block_blob);
 $getlastblockheader = $daemonRPC->getlastblockheader();
@@ -27,10 +27,10 @@ $get_info = $daemonRPC->get_info();
 
 require_once('src/walletRPC.php');
 
-$walletRPC = new walletRPC('127.0.0.1', 28083); // Change to match your wallet (monero-wallet-rpc) IP address and port; 18083 is the customary port for mainnet, 28083 for testnet, 38083 for stagenet
-// $daemonRPC = new walletRPC(['host' => '127.0.0.1', 'port' => 28081]) // Passing parameters in as array; parameters can be in any order and all are optional.
-$create_wallet = $walletRPC->create_wallet('monero_wallet', ''); // Creates a new wallet named monero_wallet with no passphrase.  Comment this line and edit the next line to use your own wallet
-$open_wallet = $walletRPC->open_wallet('monero_wallet', '');
+$walletRPC = new walletRPC('127.0.0.1', 4399); // Change to match your wallet (monero-wallet-rpc) IP address and port; 4399 is the customary port for mainnet, 28083 for testnet, 38083 for stagenet
+// $daemonRPC = new walletRPC(['host' => '127.0.0.1', 'port' => 4399]) // Passing parameters in as array; parameters can be in any order and all are optional.
+$create_wallet = $walletRPC->create_wallet('my_wallet', ''); // Creates a new wallet named monero_wallet with no passphrase.  Comment this line and edit the next line to use your own wallet
+$open_wallet = $walletRPC->open_wallet('my_wallet', '');
 $get_address = $walletRPC->get_address();
 $get_accounts = $walletRPC->get_accounts();
 $get_balance = $walletRPC->get_balance();

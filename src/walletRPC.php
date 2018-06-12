@@ -53,7 +53,7 @@ class walletRPC
    * @param  string  $password  monero-wallet-rpc passphrase             (optional)
    *
    */
-  function __construct ($host = '127.0.0.1', $port = 18083, $protocol = 'http', $user = null, $password = null)
+  function __construct ($host = '127.0.0.1', $port = 4399, $protocol = 'http', $user = null, $password = null)
   {
     if (is_array($host)) { // Parameters passed in as object/dictionary
       $params = $host;

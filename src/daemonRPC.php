@@ -54,7 +54,7 @@ class daemonRPC
    * @param  string  $password  Monero daemon RPC passphrase         (optional)
    *
    */
-  function __construct($host = '127.0.0.1', $port = 18081, $protocol = 'http', $user = null, $password = null)
+  function __construct($host = '127.0.0.1', $port = 4368, $protocol = 'http', $user = null, $password = null)
   {
     if (is_array($host)) { // Parameters passed in as object/dictionary
       $params = $host;
